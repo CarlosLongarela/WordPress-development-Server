@@ -9,6 +9,7 @@
 ## Configure it with the base system (Gridpane)
 
 * Create server from GridPane.
+* Execute the Gridpane commands on machine connected by SSH as root.
 
 ## Configure base tools
 * Install ZSH `# apt install zsh`
