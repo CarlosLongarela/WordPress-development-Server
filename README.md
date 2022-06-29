@@ -14,6 +14,8 @@
 * Install ZSH `# apt install zsh`
 * Install Powerline fonts `# apt install fonts-powerline`
 * Install Oh My ZSH `# sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"` 
+* Change theme to **agnoster** editing `/root/.zshrc` and changing `ZSH_THEME=robbyrussell`to `ZSH_THEME=agnoster`
+* Setting Global Git Username and Email `# git config --global user.name "Carlos Longarela Dev Machine 1"` and `# git config --global user.email "carlos+devm1@longarela.eu"` and check it with `# git config --list`
 
 ## Update Node and NPM
 * Install n `# npm install -g n` From https://www.freecodecamp.org/news/how-to-update-node-and-npm-to-the-latest-version/
