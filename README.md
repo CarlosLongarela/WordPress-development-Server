@@ -6,7 +6,7 @@
 * Connect to server `# ssh root@11.22.33.44`
 * Update server with `# apt update && apt upgrade`
 
-## Configure i with the base system (Gridpane)
+## Configure it with the base system (Gridpane)
 
 * Create server from GridPane.
 
