@@ -22,3 +22,6 @@
 * Install n `# npm install -g n` From https://www.freecodecamp.org/news/how-to-update-node-and-npm-to-the-latest-version/
 * Install the new version of Node `# n lts` and `# n latest`
 * Remove previously installed versions `# n prune`
+
+## Install Composer
+* Install composer with `# apt install composer`
