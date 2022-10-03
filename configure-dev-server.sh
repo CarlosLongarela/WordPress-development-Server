@@ -91,11 +91,13 @@ n prune
 #source ~/.bashrc
 #source ~/.zshrc
 
-echo " "
-echo -e "${txtcyn}Do you wish to autoremove not used packages?${txtwht}"
-select yn in "Yes" "No"; do
-  case $yn in
-    Yes ) apt autoremove;;
-    No ) exit;;
-  esac
+echo -e "${txtcyn}
+while true; do
+    read -p "Do you wish to autoremove not used packages?" yn
+    case $yn in
+        [Yy]* ) apt autoremove; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
 done
+echo -e "${txtwht}
