@@ -4,14 +4,14 @@
 
 # Copyright 2022 - Carlos Longarela https://tabernawp.com/
 
-txtblk='\e[0;30m' # Black - Regular
-txtred='\e[0;31m' # Red
-txtgrn='\e[0;32m' # Green
-txtylw='\e[0;33m' # Yellow
-txtblu='\e[0;34m' # Blue
-txtpur='\e[0;35m' # Purple
-txtcyn='\e[0;36m' # Cyan
-txtwht='\e[0;37m' # White
+txtblk='\e[30m' # Black - Regular
+txtred='\e[31m' # Red
+txtgrn='\e[32m' # Green
+txtylw='\e[33m' # Yellow
+txtblu='\e[34m' # Blue
+txtpur='\e[35m' # Purple
+txtcyn='\e[36m' # Cyan
+txtwht='\e[0m' # White
 
 RED="\e[31m"
 GREEN="\e[32m"
@@ -21,34 +21,44 @@ echo " "
 apt update
 
 echo " "
-echo "******************************************************************************"
-echo "****************************** INSTALLING MC *********************************"
-echo "******************************************************************************"
+echo "${txtylw}******************************************************************************${txtwht}"
+echo "${txtylw}****************************** INSTALLING MC *********************************${txtwht}"
+echo "${txtylw}******************************************************************************${txtwht}"
 echo " "
 if command -v mc >/dev/null; then
-  echo -e "${GREEN}MC previously installed${ENDCOLOR}"
+  echo -e "${txtgrn}MC previously installed${txtwht}"
 else
   apt install mc
 fi
 
 echo " "
-echo "*******************************************************************************************"
-echo "****************************** INSTALLING Fonts-Powerline *********************************"
-echo "*******************************************************************************************"
+echo "${txtylw}*******************************************************************************************${txtwht}"
+echo "${txtylw}****************************** INSTALLING Fonts-Powerline *********************************${txtwht}"
+echo "${txtylw}*******************************************************************************************${txtwht}"
 echo " "
 ## command do not return path on installed, no problem, if installed, will tell us :)
 apt install fonts-powerline
 
 echo " "
-echo "************************************************************************************"
-echo "****************************** INSTALLING Composer *********************************"
-echo "************************************************************************************"
+echo "${txtylw}************************************************************************************${txtwht}"
+echo "${txtylw}****************************** INSTALLING Composer *********************************${txtwht}"
+echo "${txtylw}************************************************************************************${txtwht}"
 echo " "
 if command -v composer >/dev/null; then
-  echo -e "${GREEN}MC previously installed${ENDCOLOR}"
+  echo -e "${txtgrn}Composer previously installed${txtwht}"
 else
   apt install composer
 fi
+
+echo "${txtylw} "
+echo "*************************************************************************************"
+echo "****************************** INSTALLING NPM Utils *********************************"
+echo "*************************************************************************************"
+echo "${txtwht} "
+npm install -g n
+n lts
+n latest
+n prune
 
 #apt install zsh
 
