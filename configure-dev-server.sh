@@ -73,11 +73,6 @@ n prune
 #git config --global user.name "Carlos Longarela Dev Machine 1"
 #git config --global user.email "carlos+devm1@longarela.eu"
 
-#npm install -g n
-
-#n lts
-#n latest
-#n prune
 
 #cd ~
 #curl -sS https://getcomposer.org/installer -o /tmp/composer-setup.php
