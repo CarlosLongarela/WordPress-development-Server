@@ -124,8 +124,8 @@ echo -e "${txtcyn}"
 while true; do
     read -p "Do you wish to autoremove not used packages? [YN]" yn
     case $yn in
-        [Yy]* ) apt autoremove; break;;
-        [Nn]* ) exit;;
+        [Yy]* ) apt autoremove; echo -e "${txtwht}"; break;;
+        [Nn]* ) echo -e "${txtwht}"; exit;;
         * ) echo "Please answer yes or no.";;
     esac
 done
