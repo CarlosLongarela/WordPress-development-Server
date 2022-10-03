@@ -86,7 +86,7 @@ n prune
 #source ~/.bashrc
 #source ~/.zshrc
 
-echo -e "${txtcyn}
+echo -e "${txtcyn}"
 while true; do
     read -p "Do you wish to autoremove not used packages?" yn
     case $yn in
@@ -95,4 +95,4 @@ while true; do
         * ) echo "Please answer yes or no.";;
     esac
 done
-echo -e "${txtwht}
+echo -e "${txtwht}"
