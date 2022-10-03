@@ -2,7 +2,7 @@
 
 ## Install server
 
-* Create the droplet on Vultr, Digital Ocean, etc. with 4GB RAM approximately
+* Create the droplet on Vultr, Digital Ocean, etc. with 4GB RAM or more
 * Connect to server `# ssh root@11.22.33.44`
 * Update server with `# apt update && apt upgrade`
 
@@ -10,6 +10,14 @@
 
 * Create server from GridPane.
 * Execute the Gridpane commands on machine connected by SSH as root.
+
+## Configure dev tools
+* Download `configure-dev-server.sh` from this Github repo, make it executable and execute it:
+```
+wget -O cl-dev-server.sh 'https://raw.githubusercontent.com/CarlosLongarela/WordPress-development-Server/main/configure-dev-server.sh'; bash cl-dev-server.sh
+
+
+```
 
 ## Configure base tools
 * Install ZSH `# apt install zsh`
