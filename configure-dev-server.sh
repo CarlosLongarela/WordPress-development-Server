@@ -92,4 +92,10 @@ n prune
 #source ~/.zshrc
 
 echo " "
-apt autoremove
+echo -e "${txtcyn}Do you wish to autoremove not used packages?${txtwht}"
+select yn in "Yes" "No"; do
+  case $yn in
+    Yes ) apt autoremove;;
+    No ) exit;;
+  esac
+done
