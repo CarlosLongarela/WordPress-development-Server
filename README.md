@@ -12,7 +12,7 @@
 * Execute the Gridpane commands on machine connected by SSH as root.
 
 ## Configure dev tools
-* Download `configure-dev-server.sh` from this Github repo, make it executable and execute it:
+* Download `configure-dev-server.sh` from this Github repo and execute it:
 ```
 wget -O cl-dev-server.sh 'https://raw.githubusercontent.com/CarlosLongarela/WordPress-development-Server/main/configure-dev-server.sh'; bash cl-dev-server.sh
 
