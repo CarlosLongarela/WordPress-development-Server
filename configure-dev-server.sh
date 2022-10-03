@@ -13,12 +13,12 @@ txtpur='\e[35m' # Purple
 txtcyn='\e[36m' # Cyan
 txtwht='\e[0m' # White
 
-RED="\e[31m"
-GREEN="\e[32m"
-ENDCOLOR="\e[0m"
+gituser="Carlos Longarela Dev Machine 1"
+gitmail="carlos+devm1@longarela.eu"
 
-echo " "
+echo -e "${txtpur} "
 apt update
+echo -e "${txtwht} "
 
 echo -e "${txtylw} "
 echo "******************************************************************************"
@@ -31,6 +31,16 @@ if command -v mc >/dev/null; then
 else
   apt install mc
 fi
+
+echo -e "${txtylw} "
+echo "*********************************************************************************************"
+echo "****************************** Configure Git user and email *********************************"
+echo "*********************************************************************************************"
+echo -e "${txtwht} "
+
+git config --global user.name "${gituser}"
+git config --global user.email "${gitmail}"
+
 
 echo -e "${txtylw} "
 echo "*******************************************************************************************"
@@ -69,10 +79,6 @@ n prune
 #sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Change theme to agnoster editing /root/.zshrc and changing ZSH_THEME=robbyrussellto ZSH_THEME=agnoster
-
-#git config --global user.name "Carlos Longarela Dev Machine 1"
-#git config --global user.email "carlos+devm1@longarela.eu"
-
 
 #cd ~
 #curl -sS https://getcomposer.org/installer -o /tmp/composer-setup.php
