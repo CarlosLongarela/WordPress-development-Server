@@ -117,9 +117,9 @@ then
     echo "NO HACER NADA"
 else
     echo '
-    # Composer path.
-    export PATH="$PATH:$HOME/.config/composer/vendor/bin"
-    ' >> $bashprofile
+# Composer path.
+export PATH="$PATH:$HOME/.config/composer/vendor/bin"
+' >> $bashprofile
     echo 'Composer PATH added to Bash profile file.'
 fi
 
