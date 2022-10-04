@@ -56,7 +56,7 @@ echo "****************************** INSTALLING MC *****************************
 echo "******************************************************************************"
 echo -e "${txtwht} "
 
-if [ command -v mc >/dev/null; ]
+if command -v mc >/dev/null;
 then
   echo -e "${txtgrn}MC previously installed${txtwht}"
 else
@@ -96,7 +96,7 @@ echo "****************************** INSTALLING Composer ***********************
 echo "************************************************************************************"
 echo -e "${txtwht} "
 
-if [ command -v composer >/dev/null; ]
+if command -v composer >/dev/null;
 then
   echo -e "${txtgrn}Composer previously installed${txtwht}"
 else
@@ -148,7 +148,7 @@ while true; do
             ;;
         [Nn]* )
             echo -e "${txtwht}";
-            exit
+            break
             ;;
         * ) echo "Please answer yes or no.";;
     esac
