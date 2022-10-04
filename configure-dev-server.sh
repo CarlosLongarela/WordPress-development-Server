@@ -116,11 +116,11 @@ if grep -Fxq "/.config/composer/vendor/bin" $bashprofile
 then
     echo "NO HACER NADA"
 else
-    echo "\n"
-    echo "# Added our path for composer\n"
-    #echo 'export PATH="$PATH:$HOME/.config/composer/vendor/bin"' >> $bashprofile
-    echo "\n"
-    echo 'VAMOS A AÑADIR EL PATH'
+    echo '
+    # Composer path.
+    export PATH="$PATH:$HOME/.config/composer/vendor/bin"
+    ' >> $bashprofile
+    echo 'Composer PATH added to Bash profile file.'
 fi
 
 #apt install zsh
