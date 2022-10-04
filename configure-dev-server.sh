@@ -19,6 +19,9 @@ txtwht='\e[0m' # White
 gituser="Carlos Longarela Dev Machine 1"
 gitmail="carlos+devm1@longarela.eu"
 
+bashprofile="~/.bashrc"
+zshprofile="~/.zshrc"
+
 ####################################################################################################
 ####################################################################################################
 ####################################################################################################
@@ -109,11 +112,14 @@ composer global require squizlabs/php_codesniffer
 # export PATH="$PATH:$HOME/.config/composer/vendor/bin"
 
 
-if grep -Fxq ".config/composer/vendor/bin" ~/.bashrc
+if grep -Fxq "/.config/composer/vendor/bin" $bashprofile
 then
     echo "NO HACER NADA"
 else
-    #echo 'export PATH="$PATH:$HOME/.config/composer/vendor/bin"' >> ~/.bashrc
+    echo "\n"
+    echo "# Added our path for composer\n"
+    #echo 'export PATH="$PATH:$HOME/.config/composer/vendor/bin"' >> $bashprofile
+    echo "\n"
     echo 'VAMOS A AÑADIR EL PATH'
 fi
 
