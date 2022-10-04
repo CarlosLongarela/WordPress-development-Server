@@ -26,7 +26,7 @@ oh_my_prev_theme='ZSH_THEME="robbyrussell"'
 oh_my_curr_theme='ZSH_THEME="agnoster"'
 
 function composer_add_path() {
-    if [ grep -Fxq "/.config/composer/vendor/bin" $1 ]
+    if [[ grep -Fxq "/.config/composer/vendor/bin" $1 ]]
     then
         echo -e "${txtgrn}Composer PATH previously added to $1${txtwht}";
     else
@@ -98,12 +98,12 @@ echo -e "${txtwht} "
 
 if command -v composer >/dev/null;
 then
-  echo -e "${txtgrn}Composer previously installed${txtwht}"
+  echo -e "${txtgrn}Composer previously installed${txtwht}";
 else
-  apt install composer
+  apt install composer;
+  composer_add_path $bashprofile;
 fi
 
-composer_add_path $bashprofile
 
 ####################################################################################################
 ####################################################################################################
