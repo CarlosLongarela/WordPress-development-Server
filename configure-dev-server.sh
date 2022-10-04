@@ -19,8 +19,8 @@ txtwht='\e[0m' # White
 gituser="Carlos Longarela Dev Machine 1"
 gitmail="carlos+devm1@longarela.eu"
 
-bashprofile="~/.bashrc"
-zshprofile="~/.zshrc"
+bashprofile="/root/.bashrc"
+zshprofile="/root/.zshrc"
 
 ####################################################################################################
 ####################################################################################################
