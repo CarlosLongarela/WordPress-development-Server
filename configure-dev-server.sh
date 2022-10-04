@@ -106,10 +106,18 @@ echo -e "${txtwht} "
 composer global require squizlabs/php_codesniffer
 
 # Add to PATH ~/.bashrc or ~/.zshrc with:
-export PATH="$PATH:$HOME/.config/composer/vendor/bin"
+# export PATH="$PATH:$HOME/.config/composer/vendor/bin"
+
+
+if grep -Fxq ".config/composer/vendor/bin" ~/.bashrc
+then
+    echo "NO HACER NADA"
+else
+    #echo 'export PATH="$PATH:$HOME/.config/composer/vendor/bin"' >> ~/.bashrc
+    echo 'VAMOS A AÑADIR EL PATH'
+fi
 
 #apt install zsh
-
 #sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Change theme to agnoster editing /root/.zshrc and changing ZSH_THEME=robbyrussellto ZSH_THEME=agnoster
