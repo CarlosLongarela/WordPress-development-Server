@@ -22,6 +22,23 @@ gitmail="carlos+devm1@longarela.eu"
 bashprofile="/root/.bashrc"
 zshprofile="/root/.zshrc"
 
+oh_my_prev_theme='ZSH_THEME="robbyrussell"'
+oh_my_curr_theme='ZSH_THEME="agnoster"'
+
+function composer_add_path() {
+    if grep -Fxq "/.config/composer/vendor/bin" $1 then
+        echo -e "${txtgrn}Composer PATH previously added to $1${txtwht}"
+    else
+        echo '
+# Composer path.
+export PATH="$PATH:$HOME/.config/composer/vendor/bin"
+' >> $1
+        echo -e "${txtgrn}Composer PATH added to $1${txtwht}"
+        # source /root/.bashrc or source /root/.zshrc
+        source $1
+    fi
+}
+
 ####################################################################################################
 ####################################################################################################
 ####################################################################################################
@@ -83,6 +100,8 @@ else
   apt install composer
 fi
 
+composer_add_path $bashprofile
+
 ####################################################################################################
 ####################################################################################################
 ####################################################################################################
@@ -108,28 +127,31 @@ echo -e "${txtwht} "
 
 composer global require squizlabs/php_codesniffer
 
-# Add to PATH ~/.bashrc or ~/.zshrc with:
-# export PATH="$PATH:$HOME/.config/composer/vendor/bin"
+####################################################################################################
+####################################################################################################
+####################################################################################################
+echo -e "${txtcyn}"
+while true; do
+    read -p "Do you wish to install ZSH and Oh My Zsh? [YN]" yn
+    case $yn in
+        [Yy]* )
+            apt install zsh;
+            sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)";
+            # Change theme to agnoster editing /root/.zshrc and changing ZSH_THEME=robbyrussell to ZSH_THEME=agnoster
+            sed -i "s:${oh_my_prev_theme}:${oh_my_curr_theme}:g" "$zshprofile"
+            composer_add_path $zshprofile
+            echo -e "${txtwht}";
+            break
+            ;;
+        [Nn]* )
+            echo -e "${txtwht}";
+            exit
+            ;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+echo -e "${txtwht}"
 
-
-if grep -Fxq "/.config/composer/vendor/bin" $bashprofile
-then
-    echo "NO HACER NADA"
-else
-    echo '
-# Composer path.
-export PATH="$PATH:$HOME/.config/composer/vendor/bin"
-' >> $bashprofile
-    echo 'Composer PATH added to Bash profile file.'
-fi
-
-#apt install zsh
-#sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-# Change theme to agnoster editing /root/.zshrc and changing ZSH_THEME=robbyrussellto ZSH_THEME=agnoster
-
-#source ~/.bashrc
-#source ~/.zshrc
 
 ####################################################################################################
 ####################################################################################################
