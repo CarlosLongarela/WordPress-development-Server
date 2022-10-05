@@ -73,9 +73,11 @@ echo "****************************** Configure Git user and email **************
 echo "*********************************************************************************************"
 echo -e "${txtwht} "
 
+apt install git-flow
 git config --global user.name "${gituser}"
 git config --global user.email "${gitmail}"
 
+echo -e "${txtgrn}Installed Git-flow${txtwht}";
 echo -e "${txtgrn}Configured Git as user.name ${gituser}${txtwht}";
 echo -e "${txtgrn}Configured Git as user.email ${gitmail}${txtwht}";
 
@@ -137,6 +139,45 @@ composer global require squizlabs/php_codesniffer
 ####################################################################################################
 ####################################################################################################
 ####################################################################################################
+echo -e "${txtylw} "
+echo "********************************************************************************************"
+echo "****************************** INSTALLING Coding Standards *********************************"
+echo "********************************************************************************************"
+echo -e "${txtwht} "
+
+cd /root
+mkir standards
+echo -e "${txtgrn}/root/standards dir created${txtwht}";
+
+cd /root/standards
+git clone https://github.com/WordPress/WordPress-Coding-Standards wpcs
+phpcs --config-set installed_paths /root/standards/wpcs
+echo -e "${txtgrn}Installed WordPress Coding Standards${txtwht}";
+
+cd /root/standards
+git clone https://github.com/PHPCompatibility/PHPCompatibility phpc
+phpcs --config-set installed_paths /root/standards/wpcs,/root/standards/phpc
+echo -e "${txtgrn}Installed PHP Compatibility Coding Standard${txtwht}";
+
+cd /root/standards
+git clone https://github.com/PHPCompatibility/PHPCompatibilityWP phpcwp
+phpcs --config-set installed_paths /root/standards/wpcs,/root/standards/phpc,/root/standards/phpcwp
+git checkout master
+echo -e "${txtgrn}Installed PHPCompatibilityWP${txtwht}";
+
+cd /root/standards
+git clone https://github.com/PHPCompatibility/PHPCompatibilityParagonie phpcp
+phpcs --config-set installed_paths /root/standards/wpcs,/root/standards/phpc,/root/standards/phpcwp,/root/standards/phpcp
+echo -e "${txtgrn}Installed PHPCompatibilityParagonie${txtwht}";
+
+cd /root/standards
+git clone https://github.com/phpcsstandards/phpcsutils/ phpcsu
+phpcs --config-set installed_paths /root/standards/wpcs,/root/standards/phpc,/root/standards/phpcwp,/root/standards/phpcp,/root/standards/phpcsu
+echo -e "${txtgrn}Installed PHPCSUtils${txtwht}";
+
+####################################################################################################
+####################################################################################################
+####################################################################################################
 echo -e "${txtcyn}"
 while true; do
     read -p "Do you wish to install ZSH and Oh My Zsh? [YN]" yn
@@ -169,7 +210,7 @@ while true; do
     read -p "Do you wish to autoremove not used packages? [YN]" yn
     case $yn in
         [Yy]* ) apt autoremove; echo -e "${txtwht}"; break;;
-        [Nn]* ) echo -e "${txtwht}"; exit;;
+        [Nn]* ) echo -e "${txtwht}"; break;;
         * ) echo "Please answer yes or no.";;
     esac
 done
