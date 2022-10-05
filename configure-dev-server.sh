@@ -76,6 +76,9 @@ echo -e "${txtwht} "
 git config --global user.name "${gituser}"
 git config --global user.email "${gitmail}"
 
+echo -e "${txtgrn}Configured Git as user.name ${gituser}${txtwht}";
+echo -e "${txtgrn}Configured Git as user.email ${gitmail}${txtwht}";
+
 ####################################################################################################
 ####################################################################################################
 ####################################################################################################
@@ -139,6 +142,7 @@ while true; do
     read -p "Do you wish to install ZSH and Oh My Zsh? [YN]" yn
     case $yn in
         [Yy]* )
+            echo -e "${txtred}IMPORTANT:${txtgrn} Dot not change to ZSH by default in the installation or this script will stop to execute${txtwht}";
             apt install zsh;
             sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)";
             # Change theme to agnoster editing /root/.zshrc and changing ZSH_THEME=robbyrussell to ZSH_THEME=agnoster
