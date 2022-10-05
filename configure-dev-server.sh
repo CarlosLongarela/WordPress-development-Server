@@ -26,17 +26,18 @@ oh_my_prev_theme='ZSH_THEME="robbyrussell"'
 oh_my_curr_theme='ZSH_THEME="agnoster"'
 
 function composer_add_path() {
-    if [[ grep -Fxq "/.config/composer/vendor/bin" $1 ]]
+    local profile=$1
+    if [ grep -Fxq "/.config/composer/vendor/bin" $profile ]
     then
-        echo -e "${txtgrn}Composer PATH previously added to $1${txtwht}";
+        echo -e "${txtgrn}Composer PATH previously added to $profile${txtwht}";
     else
         echo '
 # Composer path.
 export PATH="$PATH:$HOME/.config/composer/vendor/bin"
-' >> $1;
-        echo -e "${txtgrn}Composer PATH added to $1${txtwht}";
+' >> $profile;
+        echo -e "${txtgrn}Composer PATH added to $profile${txtwht}";
         # source /root/.bashrc or source /root/.zshrc
-        source $1;
+        source $profile;
     fi
 }
 
