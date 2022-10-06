@@ -215,3 +215,21 @@ while true; do
     esac
 done
 echo -e "${txtwht}"
+
+echo -e "${txtcyn}"
+echo "___________       ___.                                        __      __ __________  "
+echo "\__    ___/_____  \_ |__    ____ _______   ____  _____       /  \    /  \\______   \ "
+echo "  |    |   \__  \  | __ \ _/ __ \\_  __ \ /    \ \__  \      \   \/\/   / |     ___/ "
+echo "  |    |    / __ \_| \_\ \\  ___/ |  | \/|   |  \ / __ \_     \        /  |    |     "
+echo "  |____|   (____  /|___  / \___  >|__|   |___|  /(____  /      \__/\  /   |____|     "
+echo "                \/     \/      \/             \/      \/            \/               "
+echo " "
+echo " "
+echo " "
+echo -e "${txtgrn}"
+echo "Script finisihed, please, check that all is correct and check docs."
+echo "By the way, reload profile 'source /root/.bashrc' or 'source /root/.zshrc'"
+echo "You can change to zsh with 'zsh'"
+echo " "
+echo "Thanks, Good WordPress Coding!!!"
+echo -e "${txtwht}"
