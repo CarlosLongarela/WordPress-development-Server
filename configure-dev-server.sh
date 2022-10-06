@@ -146,7 +146,7 @@ echo "**************************************************************************
 echo -e "${txtwht} "
 
 cd /root
-mkir standards
+mkdir standards
 echo -e "${txtgrn}/root/standards dir created${txtwht}";
 
 cd /root/standards
