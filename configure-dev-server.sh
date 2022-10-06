@@ -27,7 +27,7 @@ oh_my_curr_theme='ZSH_THEME="agnoster"'
 
 function composer_add_path() {
     local profile=$1
-    if [ grep -Fxq "/.config/composer/vendor/bin" $profile ]
+    if [ grep -Fxq "/.config/composer/vendor/bin" "$profile" ]
     then
         echo -e "${txtgrn}Composer PATH previously added to $profile${txtwht}";
     else
