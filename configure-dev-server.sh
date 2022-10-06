@@ -27,7 +27,7 @@ oh_my_curr_theme='ZSH_THEME="agnoster"'
 
 function composer_add_path() {
     local profile=$1
-    if [ grep -Fxq "/.config/composer/vendor/bin" "$profile" ]
+    if grep -Fxq "/.config/composer/vendor/bin" "$profile"
     then
         echo -e "${txtgrn}Composer PATH previously added to $profile${txtwht}";
     else
@@ -174,6 +174,11 @@ cd /root/standards
 git clone https://github.com/phpcsstandards/phpcsutils/ phpcsu
 phpcs --config-set installed_paths /root/standards/wpcs,/root/standards/phpc,/root/standards/phpcwp,/root/standards/phpcp,/root/standards/phpcsu
 echo -e "${txtgrn}Installed PHPCSUtils${txtwht}";
+
+echo -e "${txtblu}";
+echo "Current Installed Coding Standards"
+phpcs -i
+echo -e "${txtwht}";
 
 ####################################################################################################
 ####################################################################################################
